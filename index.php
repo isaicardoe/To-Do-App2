@@ -3,14 +3,18 @@
     <head>
         <title>To Do App 2</title>
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
     </head>
     <body>
         <div class="wrap">
             <div class="task-list">
                 <ul>
-                    <?php require("includes/coonnect.php"); 
-                    if ($result = $mysqli->query($query)) {
-                  $numrows = $result->num_rows:
+                    <?php require("includes/connect.php"); 
+                $mysqli = new mysqli('localhost', 'root', 'root', 'todo'); 
+                $query = "SELECT * FROM todo ORDER BY date ASC, time ASC";
+                  if ($result = $mysqli->query($query)) {
+                  $numrows = $result->num_rows;
                   if ($numrows>0) {
                     while($row = $result->fetch_assoc()){
                       $task_id = $row['id'];
