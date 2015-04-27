@@ -2,9 +2,7 @@
 <html>
     <head>
         <title>To Do App 2</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <div class="wrap">
@@ -35,7 +33,7 @@
         </form>
         </div>
     </body>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
       add_task(); //calling the add task function
       
@@ -46,7 +44,7 @@
           if (new_task != '') {
             $.post('includes/add-task.php', {task: new_task}, function(data){
               $('add-new-task input[name=new-task]').val();
-                $(data).appendTo('task-list ul').hide().fadeIn();
+                $(data).appendTo('.task-list ul').hide().fadeIn();
             });
           }
           return false;
